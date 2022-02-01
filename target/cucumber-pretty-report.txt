@@ -1,0 +1,48 @@
+Feature: Brands
+
+  Background:                                                                  [90m# src/test/Resource/BrandPage.feature:3[0m
+    [32mGiven [0m[32mUser is on the web page of Argos web site[0m                            [90m# HomepageStepDefinition.user_is_on_the_web_page_of_Argos_web_site()[0m
+    [32mWhen [0m[32muser search for any product[0m                                           [90m# HomepageStepDefinition.user_search_for_any_product()[0m
+    [32mThen [0m[32muser should be able to get the result for the search product[0m          [90m# HomepageStepDefinition.user_should_be_able_to_get_the_result_for_the_search_product()[0m
+    [32mGiven [0m[32muser is on the result page[0m                                           [90m# PriceRangeSteps.user_is_on_the_result_page()[0m
+    [32mWhen [0m[32muser clicks on £[0m[32m[1m5[0m[32m - £[0m[32m[1m10[0m[32m price range checkbox[0m                          [90m# PriceRangeSteps.user_clicks_on_£_£_price_range_checkbox(Integer,Integer)[0m
+    [32mThen [0m[32muser should be able to see all the products between those price range[0m [90m# PriceRangeSteps.user_should_be_able_to_see_all_the_products_between_those_price_range()[0m
+    [32mGiven [0m[32muser is on the filter page[0m                                           [90m# SportsAndFitnessFilterSteps.user_is_on_the_filter_page()[0m
+    [31mWhen [0m[31muser clicks on sports and fitness filter button[0m                       [90m# SportsAndFitnessFilterSteps.user_clicks_on_sports_and_fitness_filter_button()[0m
+      [31morg.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="category-facet-accordion-content"]/div/div/div[1]"}
+  (Session info: chrome=97.0.4692.99)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-38V5E90', ip: '192.168.0.27', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\Rupesh\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55408}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: fde12113ca14b50b6b53cbc43412a4ee
+*** Element info: {Using=xpath, value=//*[@id="category-facet-accordion-content"]/div/div/div[1]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
+	at PageObject.ResultPage.CategorySportsAndFitness(ResultPage.java:44)
+	at StepDefinition.SportsAndFitnessFilterSteps.user_clicks_on_sports_and_fitness_filter_button(SportsAndFitnessFilterSteps.java:20)
+	at ✽.user clicks on sports and fitness filter button(src/test/Resource/BrandPage.feature:12)
+[0m
+    [36mThen [0m[36muser should be able to see all the products related to that filter[0m    [90m# SportsAndFitnessFilterSteps.user_should_be_able_to_see_all_the_products_related_to_that_filter()[0m
+
+  Scenario: Brand filter                                            [90m# src/test/Resource/BrandPage.feature:15[0m
+    [36mGiven [0m[36mUser is on resultpage[0m                                     [90m# BrandFilterPage.user_is_on_resultpage()[0m
+    [36mWhen [0m[36muser clicks on Brand filter[0m                                [90m# BrandFilterPage.user_clicks_on_Brand_filter()[0m
+    [36mThen [0m[36muser should be able to get all the selected brand products[0m [90m# BrandFilterPage.user_should_be_able_to_get_all_the_selected_brand_products()[0m
